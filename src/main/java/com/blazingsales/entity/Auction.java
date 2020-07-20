@@ -29,7 +29,7 @@ public class Auction {
     private String location;
     private LocalDateTime auctionStartDate;
     private LocalDateTime auctionEndDate;
-    private int auctionPayViews;
+    private int auctionPageViews;
     private boolean isActive;
 
 }
