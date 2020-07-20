@@ -1,24 +1,27 @@
-package com.blazingsales.BlazingSales.entity;
+package com.blazingsales.entity;
 
 
 import lombok.Data;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.UUID;
+
 
 @Entity
 @Data
 public class Auction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(generator = "UUID")
+    @Column(updatable = false, nullable = false)
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    private UUID id;
     private String title;
     private String description;
-    private String photos;
+    private byte photos;
     private String category;
     private float minimumPrice;
     private float buyNowPrice;
@@ -28,4 +31,5 @@ public class Auction {
     private LocalDateTime auctionEndDate;
     private int auctionPayViews;
     private boolean isActive;
+
 }
