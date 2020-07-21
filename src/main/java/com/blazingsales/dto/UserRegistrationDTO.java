@@ -18,16 +18,38 @@ public class UserRegistrationDTO {
         private String lastName;
 
         @NotEmpty
-        private String password;
-
-        @NotEmpty
-        private String confirmPassword;
+        private String accountName;
 
         @Email
         @NotEmpty
         private String email;
 
+        @NotEmpty
+        private String province;
+
+        @NotEmpty
+        private String city;
+
+        @NotEmpty
+        private String address;
+
+        @NotEmpty
+        private String accountCreationDate;
+
+        @NotEmpty
+        private String Avatar;
+
+        @NotEmpty
+        private String accountType;
+
         @AssertTrue
         private Boolean termsANDconditions;
+
+        @NotEmpty
+        private String password;
+
+        @NotEmpty
+        private String confirmPassword;
+
 
 }

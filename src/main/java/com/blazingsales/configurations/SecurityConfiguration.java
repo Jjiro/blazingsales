@@ -17,7 +17,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserAccountServiceImpl userAccountService;
+    private UserServiceImpl userService;
 
     @Autowired
     private CustomLoginSuccessHandler customLoginSuccessHandler;
@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
-        auth.setUserDetailsService(userAccountService);
+        auth.setUserDetailsService(userService);
         auth.setPasswordEncoder(passwordEncoder());
         return auth;
     }
@@ -59,9 +59,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
 //                .authorizeRequests()
-//                .antMatchers("/branch**","/office**").hasAuthority("OWNER")
-//                .antMatchers("/branch**","/office**").hasAuthority("EMPLOYEE")
-//                .antMatchers("/**").hasAnyAuthority("OWNER","EMPLOYEE","CUSTOMER")
+//                .antMatchers("/branch**","/office**").hasAuthority("")
+//                .antMatchers("/**").hasAnyAuthority("ADMIN","USER")
 //                .anyRequest()
 //                .authenticated()
 //                .and()

@@ -5,7 +5,6 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 
@@ -20,7 +19,7 @@ public class Bidding {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
     private String auction;
-    private UserAccount users;
+    private User user;
     private float price;
     private boolean isActive;
 
