@@ -1,6 +1,7 @@
 package com.blazingsales.entity;
 
 public enum AccountStatus {
+
     ACTIVE("ACTIVE"),
     INACTIVE("INACTIVE"),
     BLOCKED("BLOCKED");

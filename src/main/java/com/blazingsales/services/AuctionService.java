@@ -1,9 +1,9 @@
 package com.blazingsales.services;
 
 import com.blazingsales.entity.Auction;
-
 import java.util.List;
 import java.util.UUID;
+
 
 public interface AuctionService {
 
@@ -16,7 +16,6 @@ public interface AuctionService {
     List<Auction> getAllAuctions();
     List<Auction> getAllAuctionsByCategory();
     List<Auction> getAllAuctionsByUser();
-
     Auction getById(UUID id);
 
 }
