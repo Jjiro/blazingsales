@@ -1,7 +1,7 @@
 package com.blazingsales.configurations;
 
 
-import com.crs.models.Role;
+import com.blazingsales.entity.Role;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 @Configuration
 public class CustomLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+
     private String returnURL;
 
     @Override
@@ -36,10 +37,10 @@ public class CustomLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
     protected String determineTargetUrl(Authentication authentication) {
         returnURL = "/userView";
         GrantedAuthority grantedAuthority = new ArrayList<GrantedAuthority>(authentication.getAuthorities()).get(0);
-        if (grantedAuthority.getAuthority().contains(Role.OWNER.name())) {
-            returnURL = "/office";
-        }else if (grantedAuthority.getAuthority().contains(Role.EMPLOYEE.name())) {
-            returnURL = "/employee";
+        if (grantedAuthority.getAuthority().contains(Role.ADMIN.name())) {
+            returnURL = "/admin";
+        }else if (grantedAuthority.getAuthority().contains(Role.USER.name())) {
+            returnURL = "/user";
         }
         return returnURL;
     }
