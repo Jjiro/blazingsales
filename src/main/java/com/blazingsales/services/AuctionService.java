@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.UUID;
 
 
-@Service
 public interface AuctionService {
 
     boolean createAuction(Auction auction) throws Exception;
@@ -15,9 +14,12 @@ public interface AuctionService {
 
     boolean cancelAuction(UUID id) throws Exception;
 
-    List<Auction> getAllAuctions();
-    List<Auction> getAllAuctionsByCategory();
-    List<Auction> getAllAuctionsByUser();
     Auction getById(UUID id);
+
+    List<Auction> getAllAuctions();
+
+    List<Auction> getAllAuctionsByCategory();
+
+    List<Auction> getAllAuctionsByUser();
 
 }
