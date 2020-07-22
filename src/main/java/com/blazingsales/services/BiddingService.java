@@ -13,10 +13,10 @@ public interface BiddingService {
 
     List<Bidding> getAllBiddingAccounts();
 
-    Bidding getById(UUID biddingId);
+    Bidding getById(UUID id);
 
-    boolean deleteBiddingById(UUID biddingId);
+    boolean deleteBiddingById(UUID id);
 
-    boolean restoreBiddingById(UUID biddingId);
+    boolean restoreBiddingById(UUID id);
 
 }

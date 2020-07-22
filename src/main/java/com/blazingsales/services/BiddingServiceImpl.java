@@ -26,17 +26,17 @@ public class BiddingServiceImpl implements BiddingService {
     }
 
     @Override
-    public Bidding getById(UUID biddingId) {
+    public Bidding getById(UUID id) {
         return null;
     }
 
     @Override
-    public boolean deleteBiddingById(UUID biddingId) {
+    public boolean deleteBiddingById(UUID id) {
         return false;
     }
 
     @Override
-    public boolean restoreBiddingById(UUID biddingId) {
+    public boolean restoreBiddingById(UUID id) {
         return false;
     }
 }
